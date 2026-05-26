@@ -1,7 +1,8 @@
-dwindow.addEventListener("load", function() {
+window.addEventListener("load", function () {
   var form = document.getElementById("registerForm");
-  if (form) {
-    form.addEventListener("submit", function(e) {
+  if (!form) return;
+
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const username = document.getElementById("username").value.trim();
@@ -9,19 +10,20 @@ dwindow.addEventListener("load", function() {
     const password = document.getElementById("password").value.trim();
 
     const res = await fetch("https://herisusanta.my.id/javalogin/api/auth.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `action=register&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: `action=register&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
     });
 
     const data = await res.json();
 
     if (data.status === "success") {
-        document.getElementById("message").innerText = "Registrasi berhasil, silakan login";
-        window.location.href = "index.html";
+      document.getElementById("message").innerText = "Registrasi berhasil, silakan login";
+      window.location.href = "index.html";
     } else {
-        document.getElementById("message").innerText = data.message || "Gagal registrasi";
+      document.getElementById("message").innerText = data.message || "Gagal registrasi";
     }
+  });
 });
