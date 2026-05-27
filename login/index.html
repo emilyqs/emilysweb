@@ -15,6 +15,7 @@
     
   <body>
   <div class="form-modal">
+  <form id="loginForm">
     
     <div class="form-toggle">
         <button id="login-toggle" onclick="toggleLogin()">log in</button>
@@ -33,6 +34,7 @@
     </div>
 
     <div id="signup-form">
+    <form id="signupFor">
         <form>
             <input type="email" placeholder="Enter your email"/>
             <input type="text" placeholder="Choose username"/>
@@ -42,11 +44,13 @@
             <hr/>
            
         </form>
+       <div id="alertBox" class="alert" style="display:none;"></div>
+
     </div>
 
 </div>
     <script  src="./script.js"></script>
-
+    <script src="js/login.js"></script>
   </body>
   
 </html>
