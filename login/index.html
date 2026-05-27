@@ -45,7 +45,7 @@
           <input type="text" id="email" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="email_us" />
           <input type="password" id="password" class="input_form_sign d_block active_inp" placeholder="PASSWORD" name="pass_us" />
           <input type="password" id="confirmPassword" class="input_form_sign d_block active_inp" placeholder="CONFIRM PASSWORD" name="conf_pass_us" />
-          <div class="terms_and_cons">
+          <div class="terms_and_cons d_block">
             <p><input type="checkbox" name="terms_and_cons" /> <label>Accept Terms and Conditions.</label></p>
           </div>
         </div>
@@ -68,8 +68,12 @@
     document.getElementById('cont_login').style.display = 'none';
     document.getElementById('cont_register').style.display = 'block';
   }
+  window.onload = function() {
+    document.querySelector('.cont_centrar').className = "cont_centrar cent_active";
+  }
 </script>
 <script src="js/login.js"></script>
 <script src="js/register.js"></script>
 </body>
 </html>
+
