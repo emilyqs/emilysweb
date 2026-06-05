@@ -228,7 +228,11 @@ nav.scrolled {
     padding: 100px 30px 60px;
     position: relative;
 }
-
+.hero-image{
+    width:300px;
+    height:auto;
+    border-radius:20px;
+}
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
